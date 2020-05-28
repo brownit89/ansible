@@ -18,6 +18,7 @@ yes "yes" | ssh-copy-id -i ~/.ssh/id_rsa root@192.168.1.21
 yes "yes" | ssh-copy-id -i ~/.ssh/id_rsa root@192.168.1.22
 yes "yes" | ssh-copy-id -i ~/.ssh/id_rsa root@192.168.1.23
 
+sudo yum --disablerepo=epel/x86_64 -y update ca-certificates
 sudo yum install -y epel-release
 sudo yum install -y ansible
 sudo ansible mynodes -i ./hosts.ini -b -m raw -a "apk -U add python3"
